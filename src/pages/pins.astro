@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/PinLayout.astro";
+import { getCollection } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+
+const pins = await getCollection("pins");
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} /> -->
+  </head>
+  <body class="max-w-prose m-auto px-4">
+    <Header />
+    <main>
+      <section>
+        <ul>
+          {
+            pins.map((pin) => (
+              <li class="mb-4">
+                <FormattedDate date={pin.data.pubDate} />
+                <hr />
+                <h2 class="text-xl font-bold">
+                  <a href={`/pins/${pin.slug}`}>{pin.data.title}</a>
+                </h2>
+                <p>{pin.data.description}</p>
+                <img src={pin.data.heroImage} alt="" />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+      <Footer />
+    </main>
+  </body>
+</html>
