@@ -6,8 +6,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 
+// const posts = (await getCollection("blog")).sort(
+//   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+// );
 const posts = (await getCollection("blog")).sort(
-  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
@@ -20,11 +23,26 @@ const posts = (await getCollection("blog")).sort(
     <Header />
     <main>
       <section>
-        <ul>
+        <ul class="flex flex-col">
           {
             posts.map((post) => (
-              <li class="mb-8">
-                <a href={`/${post.slug}/`}>
+              <li class="flex leading-normal">
+                {/* <FormattedDate date={post.data.pubDate} /> */}
+                <time
+                  datetime={post.data.pubDate.toISOString()}
+                  class="mr-4 italic"
+                >
+                  {`${post.data.pubDate.getDate().toString().padStart(2, "0")} ${post.data.pubDate.toLocaleString("en-us", { month: "short" })}, ${post.data.pubDate.getFullYear()}`}
+                </time>
+
+                <a
+                  href={`/${post.slug}/`}
+                  class="text-lg font-semibold hover:underline"
+                >
+                  {post.data.title}
+                </a>
+
+                {/* <a href={`/${post.slug}/`}>
                   <h1 class="text-xl font-bold hover:underline">
                     {post.data.title}
                   </h1>
@@ -39,7 +57,7 @@ const posts = (await getCollection("blog")).sort(
                 >
                   {" "}
                   Read article
-                </a>
+                </a> */}
               </li>
             ))
           }
