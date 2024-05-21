@@ -25,4 +25,3 @@ const pins = defineCollection({
 });
 
 export const collections = { blog, pins };
-// export const collections = { pin };
