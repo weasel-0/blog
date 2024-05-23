@@ -19,7 +19,7 @@ const posts = (await getCollection("blog")).sort(
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="max-w-prose m-auto px-4 text-#44403c">
+  <body class="max-w-prose m-auto px-4">
     <Header />
     <main>
       <section>
@@ -35,14 +35,11 @@ const posts = (await getCollection("blog")).sort(
                 >
                   {post.data.title}
                 </a>
-                {/* <FormattedDate date={post.data.pubDate} /> */}
+                <FormattedDate date={post.data.pubDate} />
 
-                <time
-                  datetime={post.data.pubDate.toISOString()}
-                  class="italic text-rgb(170,169,170)"
-                >
-                  {`${post.data.pubDate.getDate().toString().padStart(2, "0")} ${post.data.pubDate.toLocaleString("en-us", { month: "short" })}, ${post.data.pubDate.getFullYear()}`}
-                </time>
+                {/* <time datetime={post.data.pubDate.toISOString()}>
+                  {`${post.data.pubDate.getDate().toString().padStart(2)} ${post.data.pubDate.toLocaleString("en-us", { month: "short" })}, ${post.data.pubDate.getFullYear()}`}
+                </time> */}
 
                 {/* <a href={`/${post.slug}/`}>
                   <h1 class="text-xl font-bold hover:underline">

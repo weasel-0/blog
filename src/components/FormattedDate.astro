@@ -6,14 +6,14 @@ interface Props {
 const { date } = Astro.props;
 ---
 
-<time datetime={date.toISOString()}>
+<time datetime={date.toISOString()} class="text-ash-grey">
   {
     date
       .toLocaleDateString("en-us", {
         year: "numeric",
         month: "short",
-        //   day: "numeric",
-        day: "2-digit",
+        day: "numeric",
+        // day: "2-digit",
       })
       .replace(/(\d+)\s(\w+)\s(\d+)/, "$2 $1, $3")
   }
