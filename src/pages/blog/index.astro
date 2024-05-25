@@ -19,10 +19,10 @@ const posts = (await getCollection("blog")).sort(
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="max-w-prose m-auto px-4">
+  <body class="max-w-prose m-auto px-4 dark:bg-dark-bg">
     <Header />
     <main>
-      <section>
+      <section class="dark:text-dark-text">
         <ul class="flex flex-col">
           {
             posts.map((post) => (

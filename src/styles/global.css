@@ -1,29 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
 
 @font-face {
-    font-family: "atkinson-regular";
-    src: url("/fonts/atkinson-regular.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "atkinson-regular";
+  src: url("/fonts/atkinson-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 :root {
-    background-color: #f3f3f2;
-    /* background-color: #101010; */
-    /* color: #fff; */
+  /* background-color: #f3f3f2; */
+  /* background-color: #101010; */
+  /* color: #fff; */
 
-    font-family: "atkinson-regular";
-    -webkit-font-smoothing: antialiased;
+  font-family: "atkinson-regular";
+  -webkit-font-smoothing: antialiased;
+  /* color-scheme: dark; */
 }
 
 .fontt {
-    font-family: "Caveat", cursive;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
 ::selection {
-    background: #f7ebc5;
+  background: #f7ebc5;
+  /* background: #def7b3; */
+  /* background: #3239fb; */
+  color: #fff;
+}
+
+.dark ::selection {
+  /* background: #1455b4; */
+  /* background: #3239fb; */
+
+  /* color: #000; */
 }

@@ -14,11 +14,11 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
 
-  <body class="max-w-prose m-auto px-4">
+  <body class="max-w-prose m-auto px-4 dark:bg-dark-bg">
     <Header />
     <main>
       <article>
-        <div class="prose">
+        <div class="prose dark:prose-p:text-dark-text">
           <div class="title">
             <!-- <h1>{title}</h1> -->
           </div>

@@ -1,16 +1,23 @@
 ---
-import Layout from "../layouts/about.astro";
+import Layout from "../layouts/AboutLayout.astro";
 ---
 
 <Layout>
-    <p class="text-gray-500">
-        Inspired by <a href="https://sive.rs/nowff">Derek Sivers</a>
-    </p>
-
-    <p>
-        So you two dig up, dig up dinosaurs? Remind me to thank John for a
-        lovely weekend. Must go faster... go, go, go, go, go! Just my luck, no
-        ice. You know what? It is beets. I've crashed into a beet truck. Just my
-        luck, no ice. Must go faster... go, go, go, go, go!
-    </p>
+  <!-- <p class="text-gray-500">
+    Inspired by <a href="https://sive.rs/nowff" class="dark:text-dark-text"
+      >Derek Sivers</a
+    >
+  </p> -->
+  <div class="text-sm mb-2">
+    <span class="text-gray-500">Updated on:</span>
+    <span class="dark:text-dark-text">25-05-2024</span>
+  </div>
+  <ol class="not-prose dark:text-dark-text">
+    <li>&#9913; Learning Fragment shaders</li>
+    <li>&#9913; Reading - The stranger by Albert Camus</li>
+    <li>&#9913; Tinkering this site</li>
+    <li></li>
+    <li></li>
+  </ol>
+  <!-- <p>1. Starting to write 2. sdfsd</p> -->
 </Layout>
