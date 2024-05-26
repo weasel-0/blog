@@ -1,5 +1,4 @@
 ---
-import Layout from "../layouts/PinLayout.astro";
 import { getCollection } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
@@ -14,30 +13,38 @@ const pins = await getCollection("pins");
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body class="max-w-prose m-auto px-4 dark:text-dark-text dark:bg-dark-bg">
-    <Header />
-    <main>
-      <section>
-        <ul>
-          {
-            pins.map((pin) => (
-              <li class="mb-4">
-                <FormattedDate date={pin.data.pubDate} />
-                <hr />
-                <h2 class="text-xl font-bold">
-                  <a href={`/pins/${pin.slug}`}>{pin.data.title}</a>
-                </h2>
-                <p>{pin.data.description}</p>
-                <img src={pin.data.heroImage} alt="" />
-              </li>
-            ))
-          }
-        </ul>
-      </section>
-      <Footer />
-    </main>
-  </body>
+    <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    </head>
+    <body class="max-w-prose m-auto px-4 dark:text-dark-text dark:bg-dark-bg">
+        <Header />
+        <main>
+            <ul>
+                {
+                    pins.map((pin) => (
+                        <li>
+                            <section>
+                                <div>
+                                    <span class="text-gray-600 dark:text-gray-700">
+                                        <FormattedDate
+                                            date={pin.data.pubDate}
+                                        />
+                                    </span>
+                                </div>
+                                <hr class="border-gray-200 dark:border-gray-700 mb-2" />
+                                <article class="mb-4">
+                                    <h1>{pin.data.title}</h1>
+                                    <slot />
+                                    <p>{pin.body}</p>
+                                    <img src={pin.data.heroImage} alt="" />
+                                </article>
+                            </section>
+                        </li>
+                    ))
+                }
+            </ul>
+
+            <Footer />
+        </main>
+    </body>
 </html>

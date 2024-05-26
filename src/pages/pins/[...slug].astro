@@ -1,19 +1,18 @@
 ---
 import { getCollection } from "astro:content";
-import PinLayout from "../../layouts/PinLayout.astro";
 
 export async function getStaticPaths() {
-  const pins = await getCollection("pins");
-  return pins.map((pin) => ({
-    params: { slug: pin.slug },
-    props: pin,
-  }));
+    const pins = await getCollection("pins");
+    return pins.map((pin) => ({
+        params: { slug: pin.slug },
+        props: pin,
+    }));
 }
 
 const pin = Astro.props;
 const { Content } = await pin.render();
 ---
 
-<PinLayout {...pin.data}>
-  <Content />
-</PinLayout>
+<!-- <PinLayout {...pin.data}>
+    <Content />
+</PinLayout> -->
