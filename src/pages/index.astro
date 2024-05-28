@@ -4,24 +4,34 @@ import Layout from "../layouts/AboutLayout.astro";
 
 <html>
     <Layout>
-        <p>
-            Hello 👋 I'm <b>Karthikeya</b>, an undergrad student studying
-            computer science. This is my corner of the internet where I like to
-            ramble about random stuff I come across. I'm interested in <strong
-                >web development and UI design</strong
-            >. Apart from that I enjoy reading.
+        <p class="text-slate-600 dark:text-gray-400">
+            Hello 👋 I'm <span
+                class="font-medium text-slate-800 dark:text-slate-100"
+                >Karthikeya</span
+            >, an undergrad student studying computer science. This is my corner
+            of the internet where I like to ramble about random stuff I come
+            across. I'm interested in <span
+                class="font-medium text-slate-800 dark:text-slate-100"
+                >web development</span
+            > and<span class="font-medium text-slate-800 dark:text-slate-100">
+                UI design</span
+            >. Apart from that I enjoy <span
+                class="font-medium text-slate-800 dark:text-slate-100"
+                >reading</span
+            >.
         </p>
         <p class="flex gap-4">
             <a
                 href="https://github.com/weasel-0"
                 class="underline dark:decoration-gray-500 decoration-gray-300 underline-offset-4 hover:cursor-ne-resize"
+                target="_blank"
             >
                 projects
             </a>
             <a
                 href="https://karthikch.notion.site/karthikeya-53a05f3415cc4da3b0dfc3c10562ff84"
                 class="underline dark:decoration-gray-500 decoration-gray-300 underline-offset-4 hover:cursor-ne-resize"
-                >resume</a
+                target="_blank">resume</a
             >
             <a
                 href="mailto:itskarthikeya.c@gmail.com"
