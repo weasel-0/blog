@@ -3,15 +3,10 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
 import tailwind from "@astrojs/tailwind";
-import vercel from "@vercel/analytics";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
-  adapter: vercel({
-    webAnalytics: { enabled: true },
-  }),
-  site: "https://example.com",
+  site: "https://karthi.page",
   integrations: [mdx(), sitemap(), tailwind()],
   markdownOptions: {
     render: [
