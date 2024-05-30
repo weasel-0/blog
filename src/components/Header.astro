@@ -6,33 +6,21 @@ import { Image } from "astro:assets";
 ---
 
 <header>
-  <nav class="mt-16 mb-8">
-    <!-- <a href="/"><img class="w-28 h-28" src="/eye.jpg" alt="texture" /></a> -->
-    <!-- <div
-      class="bg-white max-w-max p-2 rounded-lg shadow-sm ring-1 ring-gray-200/50 -rotate-2"
-    >
-      <Image
-        src={srcImage}
-        loading={"eager"}
-        alt=""
-        width={100}
-        height={40}
-        class="bg-gray-200 rounded-md"
-      />
-      <p class="mt-1 font-handwriting text-lg text-center">Hi</p>
-    </div> -->
-    <div class="flex flex-col justify-between gap-2">
-      <div>
-        <h2 class="text-2xl font-medium">
-          <a href="/" class="fontt dark:text-dark-text">{SITE_TITLE}</a>
-        </h2>
-      </div>
-      <div class="internal-links flex gap-2">
-        <HeaderLink href="/">home</HeaderLink>
-        <HeaderLink href="/blog">blog</HeaderLink>
-        <HeaderLink href="/pins">pins</HeaderLink>
-        <HeaderLink href="/now">now</HeaderLink>
-      </div>
-    </div>
-  </nav>
+    <nav class="mt-16 mb-8">
+        <div class="flex flex-col justify-between gap-2">
+            <div>
+                <h2 class="text-2xl font-medium">
+                    <a href="/" class="fontt dark:text-dark-text"
+                        >{SITE_TITLE}</a
+                    >
+                </h2>
+            </div>
+            <div class="internal-links flex gap-2">
+                <HeaderLink href="/">home</HeaderLink>
+                <!-- <HeaderLink href="/blog">blog</HeaderLink> -->
+                <!-- <HeaderLink href="/pins">pins</HeaderLink> -->
+                <HeaderLink href="/now">now</HeaderLink>
+            </div>
+        </div>
+    </nav>
 </header>

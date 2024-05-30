@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+export const prerender = true;
 
 export async function getStaticPaths() {
     const pins = await getCollection("pins");
